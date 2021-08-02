@@ -1,0 +1,16 @@
+.btn-search{
+    padding: 5px 20px;
+    background-color: #405D9D;
+    color: #fff;
+}
+.title{
+    color: aliceblue;
+    text-decoration: none;
+}
+.login, .register{
+    float: right;
+    text-decoration: none;
+    color: aliceblue;
+    padding-top: 10px;
+
+}

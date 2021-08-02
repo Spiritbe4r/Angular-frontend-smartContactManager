@@ -1,0 +1,92 @@
+<div id="my-modal">
+    <div class="modal-dialog modal-dialog-centered justify-content-center " role="document">
+        <div class="modal-content border-0 mx-3">
+            <div class="modal-body p-0">
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <div class="card border-0">
+                            <div class="card-header p-3">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <h6 class="mb-0"><b>Contact Sales</b></h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title text-center"><b>Contact a Sales Representative</b></h6>
+                                <form [formGroup]="editContact" (ngSubmit)="updateContact()">
+                                    <input type="hidden" [formControlName]="'cid'" value="cid" />
+
+                                    <div class="row my-3">
+                                        <div class="col">
+                                            <div class="form-group mt-1 mb-1"> <input type="text"
+                                                    [formControlName]="'name'" class="form-control pl-3" required />
+                                                <label class="ml-3 form-control-placeholder" for="name">
+                                                    Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row my-3">
+                                        <div class="col">
+                                            <div class="form-group mt-1 mb-1"> <input type="text"
+                                                    [formControlName]="'secondName'" id="secondName"
+                                                    class="form-control pl-3 " required /> <label
+                                                    class="ml-3 form-control-placeholder" for="secondName">Second
+                                                    Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row my-3">
+                                        <div class="col">
+                                            <div class="form-group mt-1 mb-1"> <input type="text"
+                                                    [formControlName]="'email'" id="email" class="form-control pl-3 "
+                                                    required /> <label class="ml-3 form-control-placeholder"
+                                                    for="email">Email</label> </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row my-3">
+                                        <div class="col">
+                                            <div class="form-group mt-1 mb-1"> <textarea type="text"
+                                                    [formControlName]="'description'" id="description"
+                                                    class="form-control pl-3 " required></textarea> <label
+                                                    class="ml-3 form-control-placeholder"
+                                                    for="description">Description</label></div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row my-3">
+                                        <div class="col">
+                                            <div class="form-group mt-1 mb-1"> <input type="text"
+                                                    [formControlName]="'work'" id="work" class="form-control pl-3 "
+                                                    required /> <label class="ml-3 form-control-placeholder"
+                                                    for="work">Work</label> </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row my-3">
+                                        <div class="col">
+                                            <div class="form-group mt-1 mb-1"> <input type="text"
+                                                    [formControlName]="'phone'" id="phone" class="form-control pl-3 "
+                                                    required /> <label class="ml-3 form-control-placeholder"
+                                                    for="phone">Phone</label></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row mt-4 mb-3">
+                                        <div class="col"><button type="submit" id="Submit"
+                                                class="btn btn-primary btn-block"><b>Submit</b></button></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

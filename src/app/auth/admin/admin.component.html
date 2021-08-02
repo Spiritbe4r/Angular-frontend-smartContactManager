@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2><i class="fa fa-file-o"></i> Usuarios de la Aplicación</h2>
+        <hr>
+        <!-- BEGIN SEARCH INPUT -->
+    <div class="input-group">
+          <input type="search" (ngModelChange)="searchUsers(key.value)" #key="ngModel" ngModel name="key"
+            id="searchName" class="form-control" placeholder="Search Contacts..." required>
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+          </span>
+        </div>
+  
+  
+  
+  
+        <!-- END SEARCH INPUT -->
+        <p>Mostrando Todos los Usuarios</p>
+  
+        <div class="padding"></div>
+  
+        <div class="row">
+          <div class="col-md-6 col-xl-4" *ngFor="let user of users | paginate: {
+                        itemsPerPage: 8,
+                        currentPage: page,
+                        totalItems: count
+                      }">  
+  
+            <div class="card m-b-30">
+              <div class="card-body row">
+                <div class="col-6">
+                  <a href=""><img src="{{imagenUrl}}" alt="" class="img-fluid rounded-circle w-60"></a>
+                </div>
+                <div class="col-6 card-title align-self-center mb-0">
+                  <h5>{{user?.username}}</h5>
+                  <p class="m-0">{{user?.about}}</p>
+  
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fa fa-envelope float-right"></i>{{user?.email}}</li>
+                <li class="list-group-item"><i class="far fa-user"></i>Estado : {{user?.enabled}}</li>
+                <li class="list-group-item"><i class="far fa-user"></i>Rol : {{user.roles.name}}</li>
+  
+              </ul>
+
+              <ul>
+                <a type="button" href="/user/perfil/{{user.id}}" class="read-more btn btn-success btn-sm ml-5 mt-3">ir a Perfil</a>
+              </ul>
+              <div>
+  
+              </div>
+              <div class="card-body">
+                <div class="float-right btn-group btn-group-sm">
+                  <a type="button"   class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"
+                    ><i class="fa fa-pencil"></i> </a>
+                  <a class="btn btn-secondary tooltips" data-placement="top"
+                    data-original-title="Delete"><i class="fa fa-times"></i></a>
+                </div>
+                <ul class="social-links list-inline mb-0">
+                  <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips"
+                      href="" data-original-title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
+                  <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips"
+                      href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                  <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips"
+                      href="" data-original-title="Skype"><i class="fa fa-skype"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+  
+          
+  
+        </div>
+        <pagination-controls class="d-flex justify-content-center"
+         previousLabel="Anterior"
+         nextLabel="Siguiente" 
+         (pageChange)="handlePageChange($event)" 
+      ></pagination-controls>
+  
+      </div>
+    </div>
+

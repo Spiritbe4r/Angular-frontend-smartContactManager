@@ -1,0 +1,56 @@
+<div class="container-sm card-sm bg-light mt-4 mb-4">
+    <div class="row">
+    
+    <article class="card-body mx-auto" >
+        <h4 class="card-title mt-3 text-center">Create Account</h4>
+        <p class="text-center">Get started with your free account</p>
+        <p>
+            <a href="" class="btn btn-block btn-twitter">   Login via Twitter</a>
+            <a href="" class="btn btn-block btn-facebook">   Login via facebook</a>
+        </p>
+        <p class="divider-text">
+            <span class="bg-light">OR</span>
+        </p>
+        <form class="form-signin" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+             </div>
+            <input name="" id="inputUsername" class="form-control"[formControlName]="'username'" placeholder="Username" type="text">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+             </div>
+            <input name="" id="inputEmail" class="form-control" [formControlName]="'email'" placeholder="Email address" type="email">
+        </div> <!-- form-group// -->
+        
+       
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input class="form-control" id="inputPassword" [formControlName]="'password'" placeholder="Create password" type="password">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input class="form-control" id="confirmPassword" [formControlName]="'confirmPassword'" placeholder="Repeat password" type="password">
+        </div> <!-- form-group// --> 
+        
+        <div class="form-group">
+            <label for="about">About you</label>
+            <textarea class="form-control" id="about" [formControlName]="'about'" rows="3"></textarea>
+          </div>
+        <div class="form-group">
+            <button  [disabled]="registerForm.invalid" type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+        </div> <!-- form-group// -->      
+        <p class="text-center">Have an account? <a href="/login">Log In</a> </p>                                                                 
+    </form>
+    </article>
+
+    
+</div>
+    </div> <!-- card.// -->
+

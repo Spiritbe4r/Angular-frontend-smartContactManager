@@ -1,0 +1,58 @@
+
+
+<div class="container">
+    <div class="row header">
+      <h1>ADD CONTACT  &nbsp;</h1>
+      <h3>Llena el Formulario de abajo con los Datos de tus Contactos!</h3>
+    </div>
+    <div class="row body">
+      <form  [formGroup]="addContactForm" (ngSubmit)="addContact()">
+           
+        <ul>
+          
+          <li>
+            <p class="left">
+                <label for="">Nombre</label>
+                <input [formControlName]="'name'" type="text" class="form-control" placeholder="Ingrese Nombre">
+            </p>
+            <p class="pull-right ml-5">
+                <label for="">Apellidos</label>
+                <input [formControlName]="'secondName'" type="text" class="form-control" placeholder="Ingrese Apellidos"> 
+            </p>
+          </li>
+          
+          <li>
+            <p>
+                <label for="">Email</label>
+                <input [formControlName]="'email'" type="text" class="form-control" placeholder="example@gmail.com">
+            </p>
+            <p class="pull-right ml-5">
+
+                    <label for="">-Telefono</label>
+                    <input [formControlName]="'phone'" type="text" class="form-control" placeholder="example: 934523456">
+                
+            </p>
+
+            <p class="left">
+
+                <label for="">Trabajo</label>
+                <input [formControlName]="'work'" type="text" class="form-control" placeholder="Ingrese Empleo">
+            
+        </p>
+          </li>        
+          <li><div class="divider"></div></li>
+          <li>
+            <label for="">Description</label>
+            <textarea [formControlName]="'description'" type="text" class="form-control" placeholder="Ingrese una Descripción del Contacto"></textarea>
+          </li>
+          
+          <li>
+            <input [disabled]="addContactForm.invalid" class="btn btn-submit" type="submit" value="AGREGAR" />
+            <small>Attención: <strong>Llene los Campos Requeridos </strong></small>
+           
+          </li>
+          
+        </ul>
+      </form>  
+    </div>
+  </div>
